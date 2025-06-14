@@ -18,23 +18,23 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 text-sm">
       {/* Fixed Header */}
-      <header className="fixed top-0 w-full z-50 transition-colors duration-300 py-4 px-6 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800/50">
+      <header className="fixed top-0 w-full z-50 transition-colors duration-300 py-3 px-4 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800/50">
         <div className="container mx-auto flex justify-between items-center">
           <button type="button" className="">
             <div className="flex items-center gap-2">
-              <Brain className="text-indigo-400" size={24} />
-              <span className="font-bold tracking-tight text-lg">KogniLabs</span>
+              <Brain className="text-indigo-400" size={20} />
+              <span className="font-bold tracking-tight text-base">KogniLabs</span>
             </div>
           </button>
-          <nav>
-            <ul className="flex gap-8">
+          <nav className="hidden md:block">
+            <ul className="flex gap-6">
               <li>
-                                <a href="#services" className="hover:text-indigo-400 transition-colors">
+                <a href="#services" className="hover:text-indigo-400 transition-colors text-sm">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-indigo-400 transition-colors">
+                <a href="#about" className="hover:text-indigo-400 transition-colors text-sm">
                   About
                 </a>
               </li>
@@ -43,109 +43,120 @@ export default function Home() {
                   href="https://calendly.com/dolapoadedo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded"
+                  className="transition-colors px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded text-sm"
                 >
-                  Book Consultation
+                  Book Call
                 </a>
               </li>
             </ul>
           </nav>
+          {/* Mobile CTA */}
+          <div className="md:hidden">
+            <a 
+              href="https://calendly.com/dolapoadedo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded text-sm"
+            >
+              Book Call
+            </a>
+          </div>
         </div>
       </header>
 
       <main>
         {/* Hero Section */}
-        <section id="top" className="pt-32 pb-20 px-6 min-h-screen flex items-center relative">
+        <section id="top" className="pt-24 pb-16 px-4 min-h-screen flex items-center relative">
           <div className="container mx-auto">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className={`text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight transition-all duration-1000 ease-out ${
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 leading-tight tracking-tight transition-all duration-1000 ease-out ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
                 Your Partner in
-                <span className="text-indigo-400"> AI and Systems Automation</span>
+                <span className="text-indigo-400 block sm:inline"> AI and Systems Automation</span>
               </h1>
               
-              <div className={`mb-12 text-zinc-300 text-base md:text-lg transition-all duration-1000 ease-out delay-300 ${
+              <div className={`mb-8 sm:mb-12 text-zinc-300 text-sm sm:text-base md:text-lg transition-all duration-1000 ease-out delay-300 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
-                <p>
+                <p className="leading-relaxed">
                   We build hands-off growth systems – streamline your content with AI, automate your lead acquisition, & solve your project management woes.
                 </p>
-                <p className="mt-4 font-medium">
+                <p className="mt-3 sm:mt-4 font-medium">
                   All with top talent from <span className="text-indigo-400">MIT</span>.
                 </p>
               </div>
-              <div className={`flex gap-4 justify-center flex-col sm:flex-row transition-all duration-1000 ease-out delay-500 ${
+              <div className={`flex gap-3 sm:gap-4 justify-center flex-col sm:flex-row transition-all duration-1000 ease-out delay-500 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}>
                 <a 
                   href="https://calendly.com/dolapoadedo"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3 rounded transition-colors"
+                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 sm:px-8 py-3 rounded transition-colors text-sm sm:text-base"
                 >
                   Book Free Consultation
                 </a>
                 <a 
                   href="#services"
-                  className="border border-zinc-700 hover:border-indigo-500 text-zinc-100 font-medium px-8 py-3 rounded transition-colors"
+                  className="border border-zinc-700 hover:border-indigo-500 text-zinc-100 font-medium px-6 sm:px-8 py-3 rounded transition-colors text-sm sm:text-base"
                 >
                   Our Services
                 </a>
               </div>
             </div>
           </div>
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block">
             <ChevronDown className="w-6 h-6 text-zinc-400 animate-bounce" />
           </div>
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-20 px-6 bg-zinc-900/50">
+        <section id="services" className="py-16 sm:py-20 px-4 bg-zinc-900/50">
           <div className="container mx-auto">
-            <div className="max-w-3xl mx-auto mb-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight">Our Services</h2>
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+            <div className="max-w-3xl mx-auto mb-8 sm:mb-12 text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 tracking-tight">Our Services</h2>
+              <p className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed">
                 From AI strategy to custom development and seamless integration – we deliver intelligent automation solutions that transform your business operations.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="border border-zinc-800 p-8 hover:border-indigo-500 transition-colors group">
-                <div className="text-indigo-400 mb-6">
-                  <Brain size={32} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+              <div className="border border-zinc-800 p-6 sm:p-8 hover:border-indigo-500 transition-colors group">
+                <div className="text-indigo-400 mb-4 sm:mb-6">
+                  <Brain size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">AI Strategy Consulting</h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">AI Strategy Consulting</h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                   We help you identify the best AI solutions for your business needs, creating strategic roadmaps that maximize ROI and competitive advantage.
                 </p>
               </div>
               
-              <div className="border border-zinc-800 p-8 hover:border-indigo-500 transition-colors group">
-                <div className="text-indigo-400 mb-6">
-                  <Bot size={32} />
+              <div className="border border-zinc-800 p-6 sm:p-8 hover:border-indigo-500 transition-colors group">
+                <div className="text-indigo-400 mb-4 sm:mb-6">
+                  <Bot size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Custom AI Development</h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Custom AI Development</h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                   Our experts build tailored AI solutions to automate your processes, from machine learning models to intelligent chatbots and decision systems.
                 </p>
               </div>
 
-              <div className="border border-zinc-800 p-8 hover:border-indigo-500 transition-colors group">
-                <div className="text-indigo-400 mb-6">
-                  <Settings size={32} />
+              <div className="border border-zinc-800 p-6 sm:p-8 hover:border-indigo-500 transition-colors group">
+                <div className="text-indigo-400 mb-4 sm:mb-6">
+                  <Settings size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">AI Integration</h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">AI Integration</h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                   Seamlessly integrate AI technologies into your existing systems without disrupting operations, ensuring smooth adoption and maximum efficiency.
                 </p>
               </div>
 
-              <div className="border border-zinc-800 p-8 hover:border-indigo-500 transition-colors group">
-                <div className="text-indigo-400 mb-6">
-                  <Workflow size={32} />
+              <div className="border border-zinc-800 p-6 sm:p-8 hover:border-indigo-500 transition-colors group">
+                <div className="text-indigo-400 mb-4 sm:mb-6">
+                  <Workflow size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">Automation Integration</h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Automation Integration</h3>
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                   Enhance your business with intelligent automation—streamlining repetitive tasks, reducing errors, and boosting productivity with cutting-edge automation tools.
                 </p>
               </div>
