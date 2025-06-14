@@ -2,20 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { 
-  Zap, 
-  Search, 
-  Shield, 
-  FileWarning, 
-  Database,
   ChevronDown,
   Brain,
-  Lightbulb,
-  TrendingUp,
-  Users,
   Bot,
   Settings,
-  Workflow,
-  Cpu
+  Workflow
 } from "lucide-react";
 
 export default function Home() {
@@ -210,7 +201,7 @@ export default function Home() {
             <div className="max-w-3xl mx-auto text-center">
                              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight">Ready to Automate Your Growth?</h2>
               <p className="text-zinc-400 text-base mb-12">
-                Let's discuss how AI and automation can streamline your operations, boost productivity, and scale your business effortlessly.
+                Let&apos;s discuss how AI and automation can streamline your operations, boost productivity, and scale your business effortlessly.
               </p>
                              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
